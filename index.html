@@ -136,6 +136,81 @@
       background-color: #007bff;
     }
 
+    /* Contact Section Styling */
+#contact {
+  background: #fff;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  margin-top: 30px;
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#contact h2 {
+  text-align: center;
+  color: #0078d7;
+  margin-bottom: 20px;
+}
+
+/* Contact Form Layout */
+#contact form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* Labels */
+#contact label {
+  font-weight: bold;
+  color: #333;
+}
+
+/* Input, Select, Textarea fields */
+#contact input,
+#contact select,
+#contact textarea {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 100%;
+  font-size: 14px;
+}
+
+/* Textarea height */
+#contact textarea {
+  height: 80px;
+  resize: vertical;
+}
+
+/* Submit Button */
+#contact input[type="submit"] {
+  background: #0078d7;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s;
+  font-weight: bold;
+  padding: 12px;
+  border-radius: 5px;
+}
+
+#contact input[type="submit"]:hover {
+  background: #005fa3;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  #contact {
+    padding: 20px;
+  }
+
+  #contact form {
+    gap: 10px;
+  }
+}
+
     footer {
       text-align: center;
       background: #003f7f;
@@ -249,19 +324,52 @@
     </form>
   </section>
 
-  <section id="contact">
-    <h2>Contact Us</h2>
-    <form>
-      <label for="name">Name</label>
-      <input type="text" id="name" name="name" placeholder="Your Name" required>
+<section id="contact" class="form-section">
+    <h2>Contact Us for Issues or Support</h2>
+
+    <!-- Salesforce Web-to-Case Form Integration -->
+    <META HTTP-EQUIV="Content-type" CONTENT="text/html; charset=UTF-8">
+
+    <form action="https://webto.salesforce.com/servlet/servlet.WebToCase?encoding=UTF-8&orgId=00DgL000008xKnh" method="POST">
+      <input type="hidden" name="orgid" value="00DgL000008xKnh">
+      <input type="hidden" name="retURL" value="https://parrotcodes.github.io/ISPWebAPp/">
+
+      <label for="name">Contact Name</label>
+      <input id="name" maxlength="80" name="name" size="20" type="text" />
 
       <label for="email">Email</label>
-      <input type="email" id="email" name="email" placeholder="Your Email" required>
+      <input id="email" maxlength="80" name="email" size="20" type="text" />
 
-      <label for="message">Message</label>
-      <textarea id="message" name="message" placeholder="Describe your issue or query..." required></textarea>
+      <label for="phone">Phone</label>
+      <input id="phone" maxlength="40" name="phone" size="20" type="text" />
 
-      <input type="submit" value="Send Message">
+      <label for="priority">Priority</label>
+      <select id="priority" name="priority">
+        <option value="">--None--</option>
+        <option value="High">High</option>
+        <option value="Medium">Medium</option>
+        <option value="Low">Low</option>
+      </select>
+
+      <label for="reason">Case Reason</label>
+      <select id="reason" name="reason">
+        <option value="">--None--</option>
+        <option value="Installation">Installation</option>
+        <option value="Equipment Complexity">Equipment Complexity</option>
+        <option value="Performance">Performance</option>
+        <option value="Breakdown">Breakdown</option>
+        <option value="Equipment Design">Equipment Design</option>
+        <option value="Feedback">Feedback</option>
+        <option value="Other">Other</option>
+      </select>
+
+      <label for="subject">Subject</label>
+      <input id="subject" maxlength="80" name="subject" size="20" type="text" />
+
+      <label for="description">Description</label>
+      <textarea name="description"></textarea>
+
+      <input type="submit" name="submit" value="Submit Case">
     </form>
   </section>
 

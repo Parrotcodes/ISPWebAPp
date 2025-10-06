@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>SpeedNet ISP | Internet Service Provider</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
-  <script src="https://www.google.com/recaptcha/api.js"></script>
 
   <style>
     * {
@@ -89,13 +88,13 @@
       padding: 30px;
       border-radius: 10px;
       box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      text-align: left;
     }
 
     form label {
       display: block;
       margin-top: 10px;
       font-weight: 600;
-      text-align: left;
     }
 
     form input, form select, form textarea {
@@ -114,6 +113,7 @@
       cursor: pointer;
       font-size: 16px;
       transition: 0.3s;
+      width: 100%;
     }
 
     form input[type="submit"]:hover {
@@ -135,18 +135,6 @@
       }
     }
   </style>
-
-  <script>
-    function timestamp() { 
-      var response = document.getElementById("g-recaptcha-response"); 
-      if (response == null || response.value.trim() == "") {
-        var elems = JSON.parse(document.getElementsByName("captcha_settings")[0].value);
-        elems["ts"] = JSON.stringify(new Date().getTime());
-        document.getElementsByName("captcha_settings")[0].value = JSON.stringify(elems);
-      } 
-    } 
-    setInterval(timestamp, 500);
-  </script>
 </head>
 
 <body>
@@ -214,7 +202,6 @@
     <h2>Register Your Interest</h2>
 
     <form action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8&orgId=00DgL000008xKnh" method="POST">
-      <input type="hidden" name="captcha_settings" value='{"keyname":"ISPWebCaptha","fallback":"true","orgId":"00DgL000008xKnh","ts":""}'>
       <input type="hidden" name="oid" value="00DgL000008xKnh">
       <input type="hidden" name="retURL" value="https://parrotcodes.github.io/ISPWebAPp/">
 
@@ -242,26 +229,55 @@
         <option value="AU">Australia</option>
       </select>
 
-      <div class="g-recaptcha" data-sitekey="6LfOAuArAAAAALpoSjTwvewjUl73dek0Q1PRJ8_0"></div><br>
       <input type="submit" value="Submit">
     </form>
   </section>
 
   <!-- Contact Section -->
   <section id="contact" class="contact">
-    <h2>Contact Us</h2>
-    <p>Facing an issue or need help? Fill out the form below:</p>
-    <form>
-      <label for="name">Your Name</label>
-      <input type="text" id="name" required>
+    <h2>Contact & Support</h2>
+    <p>If you're facing any issue or want to raise a case, please fill the form below:</p>
 
-      <label for="email2">Your Email</label>
-      <input type="email" id="email2" required>
+    <form action="https://webto.salesforce.com/servlet/servlet.WebToCase?encoding=UTF-8&orgId=00DgL000008xKnh" method="POST">
+      <input type="hidden" name="orgid" value="00DgL000008xKnh">
+      <input type="hidden" name="retURL" value="https://parrotcodes.github.io/ISPWebAPp/">
 
-      <label for="message">Message</label>
-      <textarea id="message" rows="4" required></textarea>
+      <label for="name">Contact Name</label>
+      <input id="name" name="name" type="text" required>
 
-      <input type="submit" value="Send Message">
+      <label for="email">Email</label>
+      <input id="email" name="email" type="email" required>
+
+      <label for="phone">Phone</label>
+      <input id="phone" name="phone" type="text" required>
+
+      <label for="priority">Priority</label>
+      <select id="priority" name="priority">
+        <option value="">--None--</option>
+        <option value="High">High</option>
+        <option value="Medium">Medium</option>
+        <option value="Low">Low</option>
+      </select>
+
+      <label for="reason">Case Reason</label>
+      <select id="reason" name="reason">
+        <option value="">--None--</option>
+        <option value="Installation">Installation</option>
+        <option value="Equipment Complexity">Equipment Complexity</option>
+        <option value="Performance">Performance</option>
+        <option value="Breakdown">Breakdown</option>
+        <option value="Equipment Design">Equipment Design</option>
+        <option value="Feedback">Feedback</option>
+        <option value="Other">Other</option>
+      </select>
+
+      <label for="subject">Subject</label>
+      <input id="subject" name="subject" type="text" required>
+
+      <label for="description">Description</label>
+      <textarea name="description" rows="4" required></textarea>
+
+      <input type="submit" value="Submit Case">
     </form>
   </section>
 

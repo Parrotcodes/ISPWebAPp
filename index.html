@@ -1,316 +1,272 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SpeedLink ISP | Internet Service Provider</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SpeedNet ISP | Internet Service Provider</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  <script src="https://www.google.com/recaptcha/api.js"></script>
+
   <style>
-    /* Reset and Base Styles */
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-family: "Poppins", sans-serif;
     }
 
     body {
-      background: #f5f7fa;
+      background-color: #f8f9fb;
       color: #333;
       line-height: 1.6;
     }
 
     header {
-      background: linear-gradient(135deg, #0072ff, #00c6ff);
-      color: #fff;
-      padding: 20px 10%;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
+      background: linear-gradient(90deg, #007bff, #00b4d8);
+      color: white;
+      padding: 20px 0;
+      text-align: center;
     }
 
-    header h1 {
-      font-size: 1.8rem;
+    nav ul {
+      display: flex;
+      justify-content: center;
+      list-style: none;
+      flex-wrap: wrap;
+      gap: 20px;
     }
 
     nav a {
-      color: #fff;
-      margin-left: 20px;
+      color: white;
       text-decoration: none;
-      font-weight: 500;
-      transition: color 0.3s;
-    }
-
-    nav a:hover {
-      color: #ffe600;
-    }
-
-    .hero {
-      text-align: center;
-      padding: 80px 10%;
-      background: url('https://images.unsplash.com/photo-1499952127939-9bbf5af6c51c?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
-      color: #fff;
-      position: relative;
-    }
-
-    .hero::after {
-      content: "";
-      position: absolute;
-      top: 0; left: 0; width: 100%; height: 100%;
-      background: rgba(0,0,0,0.6);
-    }
-
-    .hero-content {
-      position: relative;
-      z-index: 1;
-    }
-
-    .hero h2 {
-      font-size: 2.5rem;
-      margin-bottom: 10px;
-    }
-
-    .hero p {
-      font-size: 1.1rem;
-    }
-
-    section {
-      padding: 60px 10%;
-    }
-
-    .about {
-      text-align: center;
-    }
-
-    .about h2 {
-      margin-bottom: 15px;
-      color: #0072ff;
-    }
-
-    /* Pricing Section */
-    .pricing {
-      text-align: center;
-      background: #fff;
-      border-radius: 10px;
-      padding: 60px 10%;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    }
-
-    .pricing h2 {
-      color: #0072ff;
-      margin-bottom: 25px;
-    }
-
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      margin: 0 auto;
-      max-width: 800px;
-    }
-
-    th, td {
-      border: 1px solid #ddd;
-      padding: 15px;
-      text-align: center;
-    }
-
-    th {
-      background: #0072ff;
-      color: #fff;
-    }
-
-    tr:nth-child(even) {
-      background: #f9f9f9;
-    }
-
-    tr:hover {
-      background: #e0f0ff;
-    }
-
-    /* Forms Section */
-    .forms {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 40px;
-      justify-content: center;
-    }
-
-    form {
-      background: #fff;
-      padding: 25px;
-      border-radius: 10px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-      max-width: 400px;
-      width: 100%;
-    }
-
-    form h3 {
-      margin-bottom: 15px;
-      color: #0072ff;
-      text-align: center;
-    }
-
-    input, textarea, select {
-      width: 100%;
-      padding: 10px;
-      margin-bottom: 15px;
-      border: 1px solid #ccc;
-      border-radius: 6px;
-      font-size: 1rem;
-    }
-
-    button {
-      width: 100%;
-      background: #0072ff;
-      color: #fff;
-      padding: 10px;
-      border: none;
-      border-radius: 6px;
-      font-size: 1rem;
-      cursor: pointer;
+      font-weight: 600;
       transition: 0.3s;
     }
 
-    button:hover {
-      background: #005fcc;
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    section {
+      padding: 50px 20px;
+      text-align: center;
+    }
+
+    h1, h2 {
+      color: #007bff;
+      margin-bottom: 15px;
+    }
+
+    .about {
+      max-width: 800px;
+      margin: auto;
+    }
+
+    .pricing-table {
+      width: 100%;
+      max-width: 800px;
+      margin: 30px auto;
+      border-collapse: collapse;
+      background: #fff;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+
+    .pricing-table th, .pricing-table td {
+      padding: 15px;
+      border: 1px solid #ddd;
+      text-align: center;
+    }
+
+    .pricing-table th {
+      background: #007bff;
+      color: white;
+    }
+
+    .contact, .register {
+      max-width: 700px;
+      margin: 40px auto;
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+
+    form label {
+      display: block;
+      margin-top: 10px;
+      font-weight: 600;
+      text-align: left;
+    }
+
+    form input, form select, form textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    form input[type="submit"] {
+      background: #007bff;
+      color: white;
+      border: none;
+      margin-top: 15px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: 0.3s;
+    }
+
+    form input[type="submit"]:hover {
+      background: #0056b3;
     }
 
     footer {
+      background: #222;
+      color: white;
       text-align: center;
-      background: #0072ff;
-      color: #fff;
-      padding: 15px 10%;
-      font-size: 0.9rem;
+      padding: 15px 0;
+      margin-top: 40px;
     }
 
     @media (max-width: 768px) {
-      header {
-        flex-direction: column;
-        text-align: center;
-      }
-
-      nav a {
-        display: inline-block;
-        margin: 10px;
-      }
-
-      .hero h2 {
-        font-size: 2rem;
-      }
-
-      .forms {
-        flex-direction: column;
-        align-items: center;
-      }
-
-      table {
-        font-size: 0.9rem;
+      .pricing-table th, .pricing-table td {
+        padding: 10px;
+        font-size: 14px;
       }
     }
   </style>
-</head>
-<body>
 
+  <script>
+    function timestamp() { 
+      var response = document.getElementById("g-recaptcha-response"); 
+      if (response == null || response.value.trim() == "") {
+        var elems = JSON.parse(document.getElementsByName("captcha_settings")[0].value);
+        elems["ts"] = JSON.stringify(new Date().getTime());
+        document.getElementsByName("captcha_settings")[0].value = JSON.stringify(elems);
+      } 
+    } 
+    setInterval(timestamp, 500);
+  </script>
+</head>
+
+<body>
   <header>
-    <h1>SpeedLink ISP</h1>
+    <h1>SpeedNet ISP</h1>
+    <p>Reliable High-Speed Internet for Your Home & Business</p>
     <nav>
-      <a href="#about">About</a>
-      <a href="#pricing">Plans</a>
-      <a href="#contact">Contact</a>
-      <a href="#register">Register</a>
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#plans">Plans</a></li>
+        <li><a href="#register">Register</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
     </nav>
   </header>
 
-  <section class="hero">
-    <div class="hero-content">
-      <h2>Fast • Reliable • Affordable Internet</h2>
-      <p>Connecting you to the world with blazing-fast fiber internet.</p>
-    </div>
-  </section>
-
+  <!-- About Section -->
   <section id="about" class="about">
-    <h2>About SpeedLink</h2>
+    <h2>About Us</h2>
     <p>
-      SpeedLink is a leading Internet Service Provider offering high-speed fiber broadband and wireless connectivity for homes and businesses.
-      Our mission is to ensure uninterrupted and affordable internet access for everyone.
+      At <strong>SpeedNet ISP</strong>, we bring blazing-fast internet to homes and businesses with 99.9% uptime.  
+      Whether you’re streaming, gaming, or working from home — we’ve got you covered with flexible and affordable plans.
     </p>
   </section>
 
-  <section id="pricing" class="pricing">
+  <!-- Pricing Section -->
+  <section id="plans">
     <h2>Our Internet Plans</h2>
-    <table>
-      <thead>
-        <tr>
-          <th>Plan Name</th>
-          <th>Speed</th>
-          <th>Data Limit</th>
-          <th>Monthly Price</th>
-          <th>Installation Fee</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Basic</td>
-          <td>50 Mbps</td>
-          <td>Unlimited</td>
-          <td>₹499</td>
-          <td>Free</td>
-        </tr>
-        <tr>
-          <td>Standard</td>
-          <td>100 Mbps</td>
-          <td>Unlimited</td>
-          <td>₹799</td>
-          <td>Free</td>
-        </tr>
-        <tr>
-          <td>Premium</td>
-          <td>200 Mbps</td>
-          <td>Unlimited</td>
-          <td>₹1,199</td>
-          <td>Free</td>
-        </tr>
-        <tr>
-          <td>Business Pro</td>
-          <td>500 Mbps</td>
-          <td>Unlimited</td>
-          <td>₹2,499</td>
-          <td>₹499</td>
-        </tr>
-      </tbody>
+    <table class="pricing-table">
+      <tr>
+        <th>Plan Name</th>
+        <th>Speed</th>
+        <th>Data Limit</th>
+        <th>Price (Monthly)</th>
+      </tr>
+      <tr>
+        <td>Basic</td>
+        <td>50 Mbps</td>
+        <td>Unlimited</td>
+        <td>$20</td>
+      </tr>
+      <tr>
+        <td>Standard</td>
+        <td>100 Mbps</td>
+        <td>Unlimited</td>
+        <td>$35</td>
+      </tr>
+      <tr>
+        <td>Premium</td>
+        <td>300 Mbps</td>
+        <td>Unlimited</td>
+        <td>$50</td>
+      </tr>
+      <tr>
+        <td>Ultra</td>
+        <td>500 Mbps</td>
+        <td>Unlimited</td>
+        <td>$70</td>
+      </tr>
     </table>
   </section>
 
-  <section class="forms">
-    <form id="contact">
-      <h3>Contact Us (For Issues)</h3>
-      <input type="text" placeholder="Full Name" required>
-      <input type="email" placeholder="Email Address" required>
-      <input type="text" placeholder="Subject" required>
-      <textarea rows="4" placeholder="Describe your issue..." required></textarea>
-      <button type="submit">Send Message</button>
-    </form>
+  <!-- Registration Form -->
+  <section id="register" class="register">
+    <h2>Register Your Interest</h2>
 
-    <form id="register">
-      <h3>Register for New Connection</h3>
-      <input type="text" placeholder="Full Name" required>
-      <input type="email" placeholder="Email Address" required>
-      <input type="tel" placeholder="Phone Number" required>
-      <select required>
-        <option value="">Select Plan</option>
-        <option>Basic (50 Mbps)</option>
-        <option>Standard (100 Mbps)</option>
-        <option>Premium (200 Mbps)</option>
-        <option>Business Pro (500 Mbps)</option>
+    <form action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8&orgId=00DgL000008xKnh" method="POST">
+      <input type="hidden" name="captcha_settings" value='{"keyname":"ISPWebCaptha","fallback":"true","orgId":"00DgL000008xKnh","ts":""}'>
+      <input type="hidden" name="oid" value="00DgL000008xKnh">
+      <input type="hidden" name="retURL" value="https://parrotcodes.github.io/ISPWebAPp/">
+
+      <label for="first_name">First Name</label>
+      <input id="first_name" name="first_name" type="text" required>
+
+      <label for="last_name">Last Name</label>
+      <input id="last_name" name="last_name" type="text" required>
+
+      <label for="email">Email</label>
+      <input id="email" name="email" type="email" required>
+
+      <label for="phone">Phone</label>
+      <input id="phone" name="phone" type="text" required>
+
+      <label for="city">City</label>
+      <input id="city" name="city" type="text">
+
+      <label for="country_code">Country</label>
+      <select id="country_code" name="country_code">
+        <option value="">--Select--</option>
+        <option value="IN">India</option>
+        <option value="US">USA</option>
+        <option value="UK">UK</option>
+        <option value="AU">Australia</option>
       </select>
-      <textarea rows="3" placeholder="Installation Address" required></textarea>
-      <button type="submit">Register Now</button>
+
+      <div class="g-recaptcha" data-sitekey="6LfOAuArAAAAALpoSjTwvewjUl73dek0Q1PRJ8_0"></div><br>
+      <input type="submit" value="Submit">
+    </form>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="contact">
+    <h2>Contact Us</h2>
+    <p>Facing an issue or need help? Fill out the form below:</p>
+    <form>
+      <label for="name">Your Name</label>
+      <input type="text" id="name" required>
+
+      <label for="email2">Your Email</label>
+      <input type="email" id="email2" required>
+
+      <label for="message">Message</label>
+      <textarea id="message" rows="4" required></textarea>
+
+      <input type="submit" value="Send Message">
     </form>
   </section>
 
   <footer>
-    &copy; 2025 ISP APP | All Rights Reserved | Designed by Rakesh
+    <p>&copy; 2025 SpeedNet ISP. All Rights Reserved.</p>
   </footer>
-
 </body>
 </html>

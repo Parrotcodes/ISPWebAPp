@@ -1,11 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>SpeedNet ISP | Internet Service Provider</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ISP - Internet Service Provider</title>
   <style>
     * {
       margin: 0;
@@ -15,274 +13,260 @@
     }
 
     body {
-      background-color: #f8f9fb;
+      background: #f4f7fb;
       color: #333;
       line-height: 1.6;
     }
 
     header {
-      background: linear-gradient(90deg, #007bff, #00b4d8);
-      color: white;
-      padding: 20px 0;
+      background: #005bbb;
+      color: #fff;
       text-align: center;
+      padding: 1rem 0;
     }
 
-    nav ul {
+    nav {
+      background: #003f7f;
       display: flex;
       justify-content: center;
-      list-style: none;
       flex-wrap: wrap;
-      gap: 20px;
     }
 
     nav a {
-      color: white;
+      color: #fff;
+      padding: 14px 20px;
       text-decoration: none;
-      font-weight: 600;
-      transition: 0.3s;
+      font-weight: 500;
     }
 
     nav a:hover {
-      text-decoration: underline;
+      background: #007bff;
     }
 
     section {
-      padding: 50px 20px;
-      text-align: center;
+      padding: 40px 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+    h1{
+      color:orange;
     }
 
-    h1, h2 {
-      color: #007bff;
-      margin-bottom: 15px;
+    h2 {
+      text-align: center;
+      color: #003f7f;
+      margin-bottom: 20px;
     }
 
     .about {
-      max-width: 800px;
-      margin: auto;
-    }
-
-    .pricing-table {
-      width: 100%;
-      max-width: 800px;
-      margin: 30px auto;
-      border-collapse: collapse;
       background: #fff;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-    }
-
-    .pricing-table th, .pricing-table td {
-      padding: 15px;
-      border: 1px solid #ddd;
-      text-align: center;
-    }
-
-    .pricing-table th {
-      background: #007bff;
-      color: white;
-    }
-
-    .contact, .register {
-      max-width: 700px;
-      margin: 40px auto;
-      background: white;
       padding: 30px;
       border-radius: 10px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-      text-align: left;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
     }
 
-    form label {
+    /* Price Plan Table */
+    .plans table {
+      width: 100%;
+      border-collapse: collapse;
+      background: #fff;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    .plans th, .plans td {
+      border: 1px solid #ddd;
+      text-align: center;
+      padding: 15px;
+    }
+
+    .plans th {
+      background-color: #005bbb;
+      color: #fff;
+    }
+
+    .plans tr:nth-child(even) {
+      background-color: #f2f2f2;
+    }
+
+    /* Contact and Register Forms */
+    form {
+      background: #fff;
+      padding: 25px;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      max-width: 600px;
+      margin: 20px auto;
+    }
+
+    label {
       display: block;
-      margin-top: 10px;
-      font-weight: 600;
+      margin: 10px 0 5px;
+      font-weight: 500;
     }
 
-    form input, form select, form textarea {
+    input[type="text"],
+    input[type="email"],
+    textarea,
+    select {
       width: 100%;
       padding: 10px;
-      margin-top: 5px;
       border: 1px solid #ccc;
       border-radius: 5px;
     }
 
-    form input[type="submit"] {
-      background: #007bff;
-      color: white;
-      border: none;
-      margin-top: 15px;
-      cursor: pointer;
-      font-size: 16px;
-      transition: 0.3s;
-      width: 100%;
+    textarea {
+      height: 100px;
     }
 
-    form input[type="submit"]:hover {
-      background: #0056b3;
+    input[type="submit"] {
+      background-color: #005bbb;
+      color: white;
+      border: none;
+      padding: 12px 20px;
+      margin-top: 15px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    input[type="submit"]:hover {
+      background-color: #007bff;
     }
 
     footer {
-      background: #222;
-      color: white;
       text-align: center;
-      padding: 15px 0;
-      margin-top: 40px;
+      background: #003f7f;
+      color: #fff;
+      padding: 15px;
+      margin-top: 30px;
     }
 
     @media (max-width: 768px) {
-      .pricing-table th, .pricing-table td {
-        padding: 10px;
+      .plans table, .plans th, .plans td {
         font-size: 14px;
       }
     }
   </style>
 </head>
-
 <body>
   <header>
-    <h1>SpeedNet ISP</h1>
-    <p>Reliable High-Speed Internet for Your Home & Business</p>
-    <nav>
-      <ul>
-        <li><a href="#about">About</a></li>
-        <li><a href="#plans">Plans</a></li>
-        <li><a href="#register">Register</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
+    <h1>ISP - Internet Services</h1>
+    <p>Fast • Reliable • Affordable Internet Plans</p>
   </header>
 
-  <!-- About Section -->
+  <nav>
+    <a href="#about">About</a>
+    <a href="#plans">Plans</a>
+    <a href="#register">Register</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
   <section id="about" class="about">
     <h2>About Us</h2>
     <p>
-      At <strong>SpeedNet ISP</strong>, we bring blazing-fast internet to homes and businesses with 99.9% uptime.  
-      Whether you’re streaming, gaming, or working from home — we’ve got you covered with flexible and affordable plans.
+      Welcome to SpeedNet — your trusted Internet Service Provider delivering high-speed broadband and wireless internet across the city. 
+      Our mission is to connect homes and businesses with reliable, affordable, and customer-friendly service. Whether you’re streaming, gaming, or running a business, we’ve got the perfect plan for you!
     </p>
   </section>
 
-  <!-- Pricing Section -->
-  <section id="plans">
+  <section id="plans" class="plans">
     <h2>Our Internet Plans</h2>
-    <table class="pricing-table">
+    <table>
       <tr>
         <th>Plan Name</th>
         <th>Speed</th>
         <th>Data Limit</th>
-        <th>Price (Monthly)</th>
+        <th>Price / Month</th>
       </tr>
       <tr>
-        <td>Basic</td>
+        <td>Basic Plan</td>
         <td>50 Mbps</td>
-        <td>Unlimited</td>
-        <td>$20</td>
+        <td>200 GB</td>
+        <td>$19.99</td>
       </tr>
       <tr>
-        <td>Standard</td>
+        <td>Standard Plan</td>
         <td>100 Mbps</td>
-        <td>Unlimited</td>
-        <td>$35</td>
+        <td>500 GB</td>
+        <td>$29.99</td>
       </tr>
       <tr>
-        <td>Premium</td>
-        <td>300 Mbps</td>
+        <td>Premium Plan</td>
+        <td>200 Mbps</td>
         <td>Unlimited</td>
-        <td>$50</td>
-      </tr>
-      <tr>
-        <td>Ultra</td>
-        <td>500 Mbps</td>
-        <td>Unlimited</td>
-        <td>$70</td>
+        <td>$49.99</td>
       </tr>
     </table>
   </section>
 
-  <!-- Registration Form -->
-  <section id="register" class="register">
+  <section id="register">
     <h2>Register Your Interest</h2>
-
+    <!-- Salesforce Web-to-Lead Form -->
     <form action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8&orgId=00DgL000008xKnh" method="POST">
       <input type="hidden" name="oid" value="00DgL000008xKnh">
       <input type="hidden" name="retURL" value="https://parrotcodes.github.io/ISPWebAPp/">
 
       <label for="first_name">First Name</label>
-      <input id="first_name" name="first_name" type="text" required>
+      <input id="first_name" maxlength="40" name="first_name" type="text" required>
 
       <label for="last_name">Last Name</label>
-      <input id="last_name" name="last_name" type="text" required>
+      <input id="last_name" maxlength="80" name="last_name" type="text" required>
 
       <label for="email">Email</label>
-      <input id="email" name="email" type="email" required>
+      <input id="email" maxlength="80" name="email" type="text" required>
 
       <label for="phone">Phone</label>
-      <input id="phone" name="phone" type="text" required>
+      <input id="phone" maxlength="40" name="phone" type="text" required>
+
+      <label for="company">Company</label>
+      <input id="company" maxlength="40" name="company" type="text">
 
       <label for="city">City</label>
-      <input id="city" name="city" type="text">
+      <input id="city" maxlength="40" name="city" type="text">
 
       <label for="country_code">Country</label>
       <select id="country_code" name="country_code">
         <option value="">--Select--</option>
         <option value="IN">India</option>
-        <option value="US">USA</option>
-        <option value="UK">UK</option>
-        <option value="AU">Australia</option>
+        <option value="US">United States</option>
+        <option value="GB">United Kingdom</option>
+        <option value="CA">Canada</option>
+      </select>
+
+      <label for="state_code">State</label>
+      <select id="state_code" name="state_code">
+        <option value="">--Select--</option>
+        <option value="TS">Telangana</option>
+        <option value="MH">Maharashtra</option>
+        <option value="KA">Karnataka</option>
+        <option value="DL">Delhi</option>
       </select>
 
       <input type="submit" value="Submit">
     </form>
   </section>
 
-  <!-- Contact Section -->
-  <section id="contact" class="contact">
-    <h2>Contact & Support</h2>
-    <p>If you're facing any issue or want to raise a case, please fill the form below:</p>
-
-    <form action="https://webto.salesforce.com/servlet/servlet.WebToCase?encoding=UTF-8&orgId=00DgL000008xKnh" method="POST">
-      <input type="hidden" name="orgid" value="00DgL000008xKnh">
-      <input type="hidden" name="retURL" value="https://parrotcodes.github.io/ISPWebAPp/">
-
-      <label for="name">Contact Name</label>
-      <input id="name" name="name" type="text" required>
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <form>
+      <label for="name">Name</label>
+      <input type="text" id="name" name="name" placeholder="Your Name" required>
 
       <label for="email">Email</label>
-      <input id="email" name="email" type="email" required>
+      <input type="email" id="email" name="email" placeholder="Your Email" required>
 
-      <label for="phone">Phone</label>
-      <input id="phone" name="phone" type="text" required>
+      <label for="message">Message</label>
+      <textarea id="message" name="message" placeholder="Describe your issue or query..." required></textarea>
 
-      <label for="priority">Priority</label>
-      <select id="priority" name="priority">
-        <option value="">--None--</option>
-        <option value="High">High</option>
-        <option value="Medium">Medium</option>
-        <option value="Low">Low</option>
-      </select>
-
-      <label for="reason">Case Reason</label>
-      <select id="reason" name="reason">
-        <option value="">--None--</option>
-        <option value="Installation">Installation</option>
-        <option value="Equipment Complexity">Equipment Complexity</option>
-        <option value="Performance">Performance</option>
-        <option value="Breakdown">Breakdown</option>
-        <option value="Equipment Design">Equipment Design</option>
-        <option value="Feedback">Feedback</option>
-        <option value="Other">Other</option>
-      </select>
-
-      <label for="subject">Subject</label>
-      <input id="subject" name="subject" type="text" required>
-
-      <label for="description">Description</label>
-      <textarea name="description" rows="4" required></textarea>
-
-      <input type="submit" value="Submit Case">
+      <input type="submit" value="Send Message">
     </form>
   </section>
 
   <footer>
-    <p>&copy; 2025 SpeedNet ISP. All Rights Reserved.</p>
+    <p>© 2025 ISP WebAPP | Powered by ParrotCodes</p>
   </footer>
 </body>
 </html>
